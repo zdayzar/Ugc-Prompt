@@ -11,16 +11,19 @@ Dari caption dan deskripsi gambar, buatlah struktur JSON dengan format berikut:
  3. **character_profile**: Deskripsi detail tentang karakter/model utama agar identitasnya konsisten di seluruh konten. **Karakter harus secara eksplisit dideskripsikan berkulit cerah dan wajib menyertakan keterangan aspect ratio 9:16**.
  4. **background_setting**: Deskripsi detail tentang latar belakang/lokasi agar konsisten di seluruh konten. **Wajib menyertakan keterangan aspect ratio 9:16**.
  5. **prompts**: Array berisi **tepat 4 objek** yang diurutkan berdasarkan formula UGC berikut:
-   * **Scene 1: The Hook (Detik 0-3)** - Tujuan: Menghentikan scrolling. Visual mengejutkan, pertanyaan relasional, atau pernyataan masalah.
-   * **Scene 2: The Problem/Pain Point (Detik 4-10)** - Tujuan: Membuat audiens merasa *relate*. **Wajib fokus pada karakter yang menunjukkan produk secara close-up**. Jangan gunakan adegan bergaya *B-Roll* (seperti menyorot ruangan kosong atau tumpukan debu tanpa karakter). Karakter harus memegang/menunjukkan produk sambil mengekspresikan masalah.
-   * **Scene 3: The Solution/Product Showcase (Detik 11-20)** - Tujuan: Memperkenalkan produk sebagai solusi. Tunjukkan produk digunakan dan kemudahannya (demo).
-   * **Scene 4: Call to Action / CTA (Detik 21-selesai)** - Tujuan: Mengarahkan pembelian sebelum diskon berakhir.
-   **Setiap objek di dalam array prompts harus berisi:**
-   * **scene_name**: Nama scene (misal: "Scene 1: The Hook").
-   * **image**: Prompt deskripsi visual. **Karakter dan background harus persis sama dan konsisten** dengan character_profile dan background_setting. Selalu gunakan aspect ratio 9:16. Wajib tambahkan instruksi penahan anatomi dan produk di akhir prompt.
-   * **video**: Skenario atau prompt video UGC yang natural. **Selalu gunakan aspect ratio 9:16**.
-   * **caption**: Teks on-screen singkat berbahasa Indonesia.
-   * **dialog** (opsional): Narasi atau voiceover berbahasa Indonesia yang sesuai dengan timing setiap scene.
+ * **Scene 1: The Hook (Detik 0-3)** - Tujuan: Menghentikan scrolling. Visual mengejutkan, pertanyaan relasional, atau pernyataan masalah.
+ * **Scene 2: The Problem/Pain Point (Detik 4-10)** - Tujuan: Membuat audiens merasa *relate*. **Wajib fokus pada karakter yang menunjukkan produk secara close-up**. Jangan gunakan adegan bergaya *B-Roll* (seperti menyorot ruangan kosong atau tumpukan debu tanpa karakter). Karakter harus memegang/menunjukkan produk sambil mengekspresikan masalah.
+ * **Scene 3: The Solution/Product Showcase (Detik 11-20)** - Tujuan: Memperkenalkan produk sebagai solusi. Tunjukkan produk digunakan dan kemudahannya (demo).
+ * **Scene 4: Call to Action / CTA (Detik 21-selesai)** - Tujuan: Mengarahkan pembelian menggunakan teknik *Framing/Psychological Triggers*. **Wajib gunakan salah satu dari 3 formula framing berikut pada caption/dialog (JANGAN gunakan kata klise seperti "stok terbatas" atau "banyak yang pakai"):**
+   * **Specific Scarcity (FOMO/Gimmick):** Berikan alasan spesifik kenapa barang langka. Contoh: *"Gara-gara diborong Fuji nih kemarin jadinya stock tinggal dikit"*.
+   * **Specific Social Proof:** Gunakan angka dan demografi yang tajam. Contoh: *"Sudah 500 ibu rumah tangga di Jakarta ngebuktiin sendiri"*.
+   * **Loss Aversion (Lost Framing):** Tekankan kerugian besar jika tidak bertindak. Contoh: *"Kamu bakal rugi puluhan juta/nyesel seumur hidup kalo kamu ga lakuin ini sekarang"*.
+**Setiap objek di dalam array prompts harus berisi:**
+ * **scene_name**: Nama scene (misal: "Scene 1: The Hook").
+ * **image**: Prompt deskripsi visual. **Karakter dan background harus persis sama dan konsisten** dengan character_profile dan background_setting. Selalu gunakan aspect ratio 9:16. Wajib tambahkan instruksi penahan anatomi dan produk di akhir prompt.
+ * **video**: Skenario atau prompt video UGC yang natural. **Selalu gunakan aspect ratio 9:16**.
+ * **caption**: Teks on-screen singkat berbahasa Indonesia.
+ * **dialog** (opsional): Narasi atau voiceover berbahasa Indonesia yang sesuai dengan timing setiap scene.
 ### Panduan untuk Image Prompt:
  * **KONSISTENSI TOTAL**: Karakter (wajah, warna kulit cerah, pakaian inti, gaya) dan Background (lokasi, elemen lingkungan) **wajib konsisten** di seluruh variasi prompt.
  * **ANATOMI SEMPURNA (ANTI-DOUBLE HAND)**: Hindari kecacatan generasi AI pada anggota tubuh. Selalu tambahkan kalimat wajib ini di akhir setiap image prompt: *(anatomically correct, strictly two arms, strictly two normal hands, 5 fingers per hand, no extra limbs, no mutation)*.
@@ -39,7 +42,7 @@ Dari caption dan deskripsi gambar, buatlah struktur JSON dengan format berikut:
    * **Scene 1 (0-3 detik)**: Hook tajam ("Capek kulit kusam terus?").
    * **Scene 2 (4-10 detik)**: Menjabarkan masalah ("Udah coba ini itu tapi tetep aja gradakan...").
    * **Scene 3 (11-20 detik)**: Solusi ("Untung ketemu produk ini, teksturnya ringan banget!").
-   * **Scene 4 (21-selesai)**: Ajakan beli ("Link di keranjang kuning, keburu abis!").
+   * **Scene 4 (21-selesai)**: Ajakan beli dengan *Framing* kuat ("Udah lebih dari 5.000 ciwi-ciwi Jaksel pakai ini, kamu bakal nyesel dan rugi promo gede kalo ga klik keranjang kuning sekarang!").
 ### Contoh Output JSON:
 ```json
 {
@@ -73,8 +76,8 @@ Dari caption dan deskripsi gambar, buatlah struktur JSON dengan format berikut:
       "scene_name": "Scene 4: Call to Action / CTA",
       "image": "Medium close-up shot Wanita Asia usia 20-an berkulit cerah, rambut hitam sebahu bergelombang, mengenakan kaos katun putih polos, tersenyum ceria sambil menunjuk ke arah bawah kamera dengan satu tangan. Background di Kamar mandi estetik dengan meja wastafel marmer putih. Aspect ratio 9:16. (anatomically correct, strictly two arms, strictly two normal hands, 5 fingers per hand, no extra limbs, no mutation). (Do not alter, warp, or modify the original product's design, text, shape, or colors).",
       "video": "Video vertikal Wanita Asia usia 20-an berkulit cerah tersenyum ceria sambil menunjuk jari ke bawah (arah tombol keranjang kuning TikTok). Aspect ratio 9:16.",
-      "caption": "Buruan cek keranjang kuning! 🛒",
-      "dialog": "Link ada di keranjang kuning ya, buruan check out sekarang sebelum diskonnya habis!"
+      "caption": "Sisa dikit gara-gara diborong influencer! 🛒",
+      "dialog": "Jujur, gara-gara kemarin sempat diborong habis sama Fuji, stoknya sekarang tinggal dikit banget. Kamu bakal rugi puluhan ribu kalau ga check out pakai promo di keranjang kuning sekarang juga!"
     }
   ]
 }
