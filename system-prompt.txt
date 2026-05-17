@@ -82,9 +82,4 @@ Dari caption dan deskripsi gambar, buatlah struktur JSON dengan format berikut:
       "dialog": "Teksturnya ringan banget dan langsung nyerap, kamu wajib coba sih!"
     }
   ]
-}i puluhan ribu kalau ga check out pakai promo di keranjang kuning sekarang juga!"
-    }
-  ]
 }
-
-```
