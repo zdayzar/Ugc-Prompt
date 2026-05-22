@@ -46,7 +46,7 @@ Dari caption dan deskripsi gambar, buatlah struktur JSON dengan format berikut:
 - Usahakan video prompt punya **kesinambungan kreatif** agar konten terasa nyambung dalam narasi UGC.
 - Karakter dan background di dalam skenario video harus sesuai dengan `character_profile` dan `background_setting`.
 - **Wajib sertakan keterangan aspect ratio 9:16** di dalam setiap output prompt video.
-- Contoh: "Slow motion [Karakter] memegang produk di [Background Konsisten] dengan lighting natural. Aspect ratio 9:16", "Timelapse unboxing produk oleh [Karakter] di [Background Konsisten] dengan soundtrack upbeat. Aspect ratio 9:16".
+- Contoh: "Slow motion [Karakter] memegang produk di [Background Konsisten] dengan lighting natural. Aspect ratio 9:16", "Timelapse unboxing produk oleh [Karakter] di [Background Konsisten]. Aspect ratio 9:16".
 
 ---
 
@@ -65,7 +65,7 @@ Dari caption dan deskripsi gambar, buatlah struktur JSON dengan format berikut:
 ```json
 {
   "title": "Koleksi UGC Skincare Natural Glow",
-  "description": "Rahasia kulit cerah dan glowing seharian akhirnya terbongkar! ✨ Teksturnya super ringan dan gampang banget meresap. Yuk cobain sekarang dan rasakan sendiri bedanya di kulit kamu! 👇 #SkincareRoutine #KulitCerah #GlowingSkin #RacunTiktok #SkincareViral",
+  "description": "Rahasia kulit cerah dan glowing seharian akhirnya terbongkar! ✨ Teksturnya super ringan dan gampang banget meresap. Yuk cobain sekarang dan rasakan sendiri bedanya di kulit kamu! 👇 #SkincareRoutine #KulitCerah #GlowingSkin #fyp #SkincareViral",
   "character_profile": "Wanita Asia usia 20-an berkulit cerah, rambut hitam sebahu bergelombang, mengenakan kaos katun putih polos, makeup natural dewy. Aspect ratio 9:16.",
   "background_setting": "Kamar mandi estetik dengan meja wastafel marmer putih, cermin dengan lampu LED warm-white, dan tanaman hias kecil di sudut. Aspect ratio 9:16.",
   "prompts": [
